@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ChooseLanguageActivity">
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="163dp"
+        android:layout_height="163dp"
+        android:src="@drawable/logo_3x"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="55dp"
+        />
+    <TextView
+        android:id="@+id/tv1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome to Moontak"
+        app:layout_constraintTop_toBottomOf="@id/logo"
+        app:layout_constraintStart_toStartOf="@id/logo"
+        app:layout_constraintEnd_toEndOf="@id/logo"
+        android:layout_marginTop="15dp"
+        android:textColor="@color/blue_500"
+        android:textStyle="bold"
+        android:fontFamily="@font/arabicmedium"
+        android:textSize="25dp"
+        />
+    <TextView
+        android:id="@+id/tv2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="which language do you prefer"
+        app:layout_constraintTop_toBottomOf="@id/tv1"
+        app:layout_constraintStart_toStartOf="@id/logo"
+        app:layout_constraintEnd_toEndOf="@id/logo"
+        android:layout_marginTop="15dp"
+        android:textColor="@color/blue_500"
+        android:fontFamily="@font/arabicregular"
+        android:textSize="20dp"
+        />
+    <FrameLayout
+        android:id="@+id/ar_language_btn"
+        app:layout_constraintTop_toBottomOf="@id/tv2"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@drawable/custom_edit_text"
+        android:backgroundTint="@color/blue_500"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="35dp"
+        >
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|center_vertical"
+            android:buttonTint="@color/white"
+            android:checked="true"
+            />
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/jordan"
+        android:layout_gravity="start|center_vertical"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+
+    />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="العربية"
+            android:layout_gravity="start|center_vertical"
+            android:layout_marginStart="80dp"
+            android:textSize="15dp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/arabicregular"
+            />
+
+
+    </FrameLayout>
+    <FrameLayout
+        android:id="@+id/en_language_btn"
+        app:layout_constraintTop_toBottomOf="@id/ar_language_btn"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@drawable/custom_edit_text"
+        android:backgroundTint="@color/blue_500"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="35dp"
+        >
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|center_vertical"
+            android:buttonTint="@color/white"
+            />
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/united_states"
+        android:layout_gravity="start|center_vertical"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+
+    />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="English"
+            android:layout_gravity="start|center_vertical"
+            android:layout_marginStart="80dp"
+            android:textSize="15dp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/arabicregular"
+            />
+
+
+    </FrameLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/continueBtn"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        app:layout_constraintVertical_bias="1"
+        android:layout_marginBottom="60dp"
+        android:fontFamily="@font/arabicsemibold"
+        android:text="Continue"
+        android:textAllCaps="false"
+        android:textSize="16sp"
+        app:cornerRadius="25dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginEnd="35dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/en_language_btn" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

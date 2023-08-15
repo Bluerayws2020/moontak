@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ClockTest">
+
+
+    <ir.samanjafari.easycountdowntimer.EasyCountDownTextview
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/easyCountDownTextview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:hours="0"
+        app:minute="1"
+        app:second="10"
+        app:showHours="true"
+        app:textSize="12sp"
+        android:background="@color/blue_500"
+        app:digitBackground="@color/blue_500"
+        app:textColor="@color/white"
+        app:setAnimation="true"
+        app:colonColor="@color/white"
+        app:showDays="true"
+        app:daysLabel=" "
+        app:days="1"
+        app:start_automatically="false"
+        app:useFarsiNumeral="false"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

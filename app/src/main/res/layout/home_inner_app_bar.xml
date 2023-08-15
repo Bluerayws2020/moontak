@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="110dp"
+    android:background="#FCF8F8"
+    >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="My Profile"
+        android:textSize="18sp"
+        android:textColor="@color/blue_500"
+        android:fontFamily="@font/arabicsemibold"
+        android:layout_gravity="center"
+        />
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/menu"
+        android:layout_gravity="start|center_vertical"
+        android:layout_marginStart="20dp"
+        />
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/inner_back"
+        android:layout_gravity="end|center_vertical"
+        android:layout_marginEnd="20dp"
+        />
+
+</FrameLayout>
