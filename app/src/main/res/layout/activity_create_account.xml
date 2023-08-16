@@ -155,7 +155,7 @@
                     android:fontFamily="@font/arabicsemibold"
                     />
                 <com.google.android.material.button.MaterialButton
-                    android:id="@+id/createNewAccountBtn"
+                    android:id="@+id/logInBtn"
                     android:layout_width="match_parent"
                     style="?attr/materialButtonOutlinedStyle"
                     android:layout_height="70dp"

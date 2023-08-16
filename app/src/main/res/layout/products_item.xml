@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="195dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="25dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginBottom="10dp"
+    android:layout_marginStart="20dp"
+    android:layout_marginEnd="20dp"
+
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="25dp"
+        >
+        <ImageView
+            android:id="@+id/productImage"
+            android:layout_width="90dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/tahini"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/textView2"
+            app:layout_constraintStart_toEndOf="@id/productImage"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/productName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/arabicsemibold"
+                android:text="@string/tahini"
+                android:textColor="@color/black_200"
+                android:textSize="13sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Spinner
+                android:id="@+id/quantityTypeSpinner"
+                android:layout_width="130dp"
+                android:layout_height="30dp"
+                android:background="@drawable/custom_city_et"
+                android:fontFamily="@font/arabicsemibold"
+                android:text="alkaseih golden tahini 450gm"
+                android:textColor="@color/black_200"
+                android:textSize="15sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/productName" />
+
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_marginEnd="10dp"
+                android:src="@drawable/baseline_keyboard_arrow_down_24"
+                app:layout_constraintBottom_toBottomOf="@id/quantityTypeSpinner"
+                app:layout_constraintEnd_toEndOf="@id/quantityTypeSpinner"
+                app:layout_constraintTop_toTopOf="@id/quantityTypeSpinner" />
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="add to cart"
+                android:textSize="9dp"
+                app:cornerRadius="25dp"
+                app:icon="@drawable/add_location_icon"
+                app:iconGravity="textEnd"
+                app:iconSize="15dp"
+                app:layout_constraintEnd_toEndOf="@id/quantityTypeSpinner"
+                app:layout_constraintStart_toStartOf="@id/quantityTypeSpinner"
+                app:layout_constraintTop_toBottomOf="@id/quantityTypeSpinner" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageView
+            android:id="@+id/likeBtn"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/love"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/constraintLayout"
+            android:alpha="0.3"
+            android:layout_marginEnd="20dp"
+            />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/arabicsemibold"
+            android:text="2.30 JOD"
+            android:textColor="@color/blue_500"
+            android:textSize="13sp"
+            app:layout_constraintEnd_toEndOf="@id/likeBtn"
+            app:layout_constraintStart_toStartOf="@+id/likeBtn"
+            app:layout_constraintTop_toBottomOf="@+id/likeBtn" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.cardview.widget.CardView>

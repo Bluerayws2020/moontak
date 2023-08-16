@@ -12,6 +12,31 @@
         android:theme="@style/Theme.Montak"
         tools:targetApi="31">
         <activity
+            android:name=".ContinueToPayment"
+            android:exported="false" />
+        <activity
+            android:name=".CartActivity"
+            android:exported="false" />
+        <activity
+            android:name=".cartActivity"
+            android:exported="false"
+            android:label="@string/title_activity_cart"
+            android:theme="@style/Theme.Montak" />
+        <activity
+            android:name=".ProductActivity"
+            android:exported="false" />
+        <activity
+            android:name=".InnerAddNewLocationsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".InnerAddNewLocationActivity"
+            android:exported="false"
+            android:label="@string/title_activity_inner_add_new_location"
+            android:theme="@style/Theme.Montak.NoActionBar" />
+        <activity
+            android:name=".InnerAddLocationActivity"
+            android:exported="false" />
+        <activity
             android:name=".ChnagePersonalDataActivity"
             android:exported="false" />
         <activity
