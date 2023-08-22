@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.ProductsFragment"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    >
+
+
+    <include
+        android:id="@+id/included_tap"
+        layout="@layout/fav_app_bar"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        >
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/deleteItem"
+
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="delete Item"
+            android:textSize="9dp"
+            android:layout_weight="1"
+            app:cornerRadius="25dp"
+            app:iconGravity="textEnd"
+            app:iconSize="15dp"
+            android:layout_margin="20dp"
+
+            app:layout_constraintEnd_toEndOf="@id/quantityTypeSpinner"
+            app:layout_constraintStart_toStartOf="@id/quantityTypeSpinner"
+            app:layout_constraintTop_toBottomOf="@id/quantityTypeSpinner" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/addItem"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="add item"
+            android:textSize="9dp"
+            android:layout_weight="1"
+            app:cornerRadius="25dp"
+            app:iconGravity="textEnd"
+            android:layout_margin="20dp"
+            app:iconSize="15dp"
+            app:layout_constraintEnd_toEndOf="@id/quantityTypeSpinner"
+            app:layout_constraintStart_toStartOf="@id/quantityTypeSpinner"
+            app:layout_constraintTop_toBottomOf="@id/quantityTypeSpinner" />
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBarSearch"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="5dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/products_search_recycler"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/products_search_recycler"
+        app:layout_constraintTop_toTopOf="@+id/products_search_recycler" />
+    <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/productRv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/rvLabel"
+            app:layout_constraintBottom_toBottomOf="parent"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:listitem="@layout/products_item"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            />
+
+    <TextView
+        android:id="@+id/messageSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/products_search"
+        android:textAlignment="center"
+        android:textColor="@color/blue_200"
+        android:textSize="18sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/products_search_recycler"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/products_search_recycler"
+        app:layout_constraintTop_toTopOf="@+id/products_search_recycler" />
+
+</LinearLayout>
+

@@ -7,8 +7,8 @@
     tools:context=".ChooseLanguageActivity">
     <ImageView
         android:id="@+id/logo"
-        android:layout_width="163dp"
-        android:layout_height="163dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:src="@drawable/logo_3x"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -27,7 +27,7 @@
         android:textColor="@color/blue_500"
         android:textStyle="bold"
         android:fontFamily="@font/arabicmedium"
-        android:textSize="25dp"
+        android:textSize="20sp"
         />
     <TextView
         android:id="@+id/tv2"
@@ -40,7 +40,7 @@
         android:layout_marginTop="15dp"
         android:textColor="@color/blue_500"
         android:fontFamily="@font/arabicregular"
-        android:textSize="20dp"
+        android:textSize="15dp"
         />
     <FrameLayout
         android:id="@+id/ar_language_btn"
@@ -50,16 +50,17 @@
         android:background="@drawable/custom_edit_text"
         android:backgroundTint="@color/blue_500"
         android:layout_marginStart="35dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="35dp"
         >
+
         <CheckBox
+            android:id="@+id/arCheckBox"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end|center_vertical"
             android:buttonTint="@color/white"
-            android:checked="true"
-            />
+            android:checked="true" />
     <de.hdodenhof.circleimageview.CircleImageView
         android:layout_width="30dp"
         android:layout_height="30dp"
@@ -93,12 +94,13 @@
         android:layout_marginTop="17dp"
         android:layout_marginEnd="35dp"
         >
+
         <CheckBox
+            android:id="@+id/enCheckBox"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end|center_vertical"
-            android:buttonTint="@color/white"
-            />
+            android:buttonTint="@color/white" />
     <de.hdodenhof.circleimageview.CircleImageView
         android:layout_width="30dp"
         android:layout_height="30dp"
@@ -127,7 +129,7 @@
         android:layout_width="match_parent"
         android:layout_height="70dp"
         app:layout_constraintVertical_bias="1"
-        android:layout_marginBottom="60dp"
+        android:layout_marginBottom="40dp"
         android:fontFamily="@font/arabicsemibold"
         android:text="Continue"
         android:textAllCaps="false"

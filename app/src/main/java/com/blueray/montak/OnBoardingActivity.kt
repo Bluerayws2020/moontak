@@ -1,5 +1,6 @@
 package com.blueray.montak
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.lifecycleScope
@@ -23,7 +24,12 @@ class OnBoardingActivity : AppCompatActivity() {
 
         // add fake swipe
         binding.next.setOnClickListener {
+            if(binding.viewPager.currentItem == 2){
             binding.viewPager.setCurrentItem(binding.viewPager.currentItem+1, true)
+            }else{
+//                start LogIn Activity
+                startActivity(Intent(this,LoginActivity::class.java))
+            }
         }
 
     }

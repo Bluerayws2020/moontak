@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layoutDirection="ltr"
     tools:context=".LoginActivity"
     android:background="@color/blue_500"
     >
@@ -21,6 +22,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             android:layout_marginTop="40dp"
             />
+
         <include
             android:id="@+id/included_tap"
             layout="@layout/login_app_bar"
@@ -142,6 +144,12 @@
                     android:fontFamily="@font/arabicregular"
                     android:text="we will send you code to verify the information"
                     />
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/per"
+                    >
+
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/continueBtn"
                     android:layout_width="match_parent"
@@ -152,7 +160,25 @@
                     android:fontFamily="@font/arabicsemibold"
                     android:textAllCaps="false"
                     android:layout_margin="25dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/per"
+                    app:layout_constraintEnd_toEndOf="@id/per"
+                    app:layout_constraintStart_toStartOf="@+id/per"
+                    app:layout_constraintTop_toTopOf="@id/per"
                     />
+                    <ProgressBar
+                        android:id="@+id/progressBar"
+                        style="?android:attr/progressBarStyle"
+                        android:layout_width="wrap_content"
+                        android:visibility="gone"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="@+id/per"
+                        app:layout_constraintEnd_toEndOf="@id/per"
+                        app:layout_constraintStart_toStartOf="@+id/per"
+                        app:layout_constraintTop_toTopOf="@id/per" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -162,20 +188,20 @@
                     android:textColor="@color/black_200"
                     android:fontFamily="@font/arabicsemibold"
                     />
+
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/createNewAccountBtn"
-                    android:layout_width="match_parent"
                     style="?attr/materialButtonOutlinedStyle"
+                    android:layout_width="match_parent"
                     android:layout_height="70dp"
-                    app:cornerRadius="25dp"
-                    android:text="Create New Account"
-                    android:textSize="16sp"
-                    android:fontFamily="@font/arabicsemibold"
-                    android:textAllCaps="false"
                     android:layout_margin="25dp"
+                    android:fontFamily="@font/arabicsemibold"
+                    android:text="Create New Account"
+                    android:textAllCaps="false"
+                    android:textSize="16sp"
+                    app:cornerRadius="25dp"
                     app:strokeColor="@color/blue_500"
-                    app:strokeWidth="2dp"
-                    />
+                    app:strokeWidth="2dp" />
 
                 <LinearLayout
                     android:layout_marginBottom="100dp"
@@ -201,7 +227,9 @@
                 </LinearLayout>
 
             </LinearLayout>
+
         </androidx.cardview.widget.CardView>
+
 
 
 
