@@ -3,6 +3,7 @@ package com.blueray.montak
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
@@ -25,11 +26,43 @@ class HomeActivity : AppCompatActivity() {
         NavigationUI.setupWithNavController(binding.bottomNavBar, navController)
         NavigationUI.setupWithNavController(binding.navDrawer, navController)
 
+
+
+
         binding.myOrdersFab.setOnClickListener {
             startActivity(Intent(this,CartActivity::class.java))
         }
         // set Up drawer Navigation
         setUpDrawerNavigation()
+
+
+
+        binding.bottomNavBar.setOnItemSelectedListener {
+                item ->
+            when(item.itemId){
+                R.id.home ->{
+                    navController.navigate(R.id.home)
+                    true
+                }
+                R.id.favorite->{
+                    navController.navigate(R.id.favFragment)
+                    true
+                }
+                R.id.notifications->{
+                    navController.navigate(R.id.notficationFragment)
+                    true
+                }
+                R.id.search ->{
+                    navController.navigate(R.id.searchFragment)
+                    true
+
+                }
+                else ->{
+                    false
+                }
+            }
+        }
+
 
     }
 

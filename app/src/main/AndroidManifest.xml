@@ -10,6 +10,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.Montak"
+        android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
             android:name=".ContinueToPayment"
@@ -18,7 +19,7 @@
             android:name=".CartActivity"
             android:exported="false" />
         <activity
-            android:name=".cartActivity"
+            android:name=".CategoriesActivity"
             android:exported="false"
             android:label="@string/title_activity_cart"
             android:theme="@style/Theme.Montak" />
@@ -47,12 +48,9 @@
             android:exported="false" />
         <activity
             android:name=".OnBoardingActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".ChooseLanguageActivity"
-            android:exported="false" />
-        <activity
-            android:name=".SplashScreen"
             android:exported="false" />
         <activity
             android:name=".HomeActivity"
@@ -95,6 +93,9 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SplashScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

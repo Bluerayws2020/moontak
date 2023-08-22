@@ -4,9 +4,10 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.lifecycle.lifecycleScope
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
+import android.os.Handler
+import android.os.Looper
+import com.blueray.montak.databinding.ActivityOnBoardingBinding
+import com.example.aljabermall.helpers.HelperUtils
 
 @SuppressLint("CustomSplashScreen")
 class SplashScreen : AppCompatActivity() {
@@ -14,10 +15,25 @@ class SplashScreen : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash_screen)
 
-        // delay 3000 ms and Launch on Boarding Activity
-        lifecycleScope.launch {
-            delay(3000)
-            startActivity(Intent(this@SplashScreen,ChooseLanguageActivity::class.java))
-        }
+        Handler(Looper.getMainLooper()).postDelayed({
+            if (HelperUtils.getUID(this) != "0") {
+                openUser()
+
+            } else
+            openHome()
+
+        }, 2000)
+
+    }
+    private fun openHome() {
+        val intentHome = Intent(this, HomeActivity::class.java)
+        startActivity(intentHome)
+        finish()
+    }
+
+    private fun openUser() {
+        val intentHome = Intent(this, HomeActivity::class.java)
+        startActivity(intentHome)
+        finish()
     }
 }

@@ -52,4 +52,9 @@
         libero vel nunc consequat, quis tincidunt nisl eleifend. Cras bibendum enim a justo luctus
         vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
     </string>
+    <string name="error">err#101</string>
+    <string name="search"> Search</string>
+    <string name="products_search">Products Search</string>
+    <string name="search_empty">search empty</string>
+    <string name="categories">categories</string>
 </resources>
