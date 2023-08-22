@@ -10,15 +10,14 @@ import android.widget.ArrayAdapter
 import android.widget.CompoundButton
 import androidx.recyclerview.widget.RecyclerView
 import com.blueray.montak.databinding.ProductsItemBinding
-import com.blueray.montak.helper.ViewUtils.hide
 import com.blueray.montak.interfaces.OnProductListener
+import com.blueray.montak.model.GetProudects
+import com.blueray.montak.model.MessageModel
 import com.blueray.montak.model.ProudectModelItem
-import com.example.aljabermall.helpers.HelperUtils
 
 class ProductAdapter
 // this down is the basic implementation of an adapter
     (
-    // todo change list model
     val context:Context,
     var list: List<ProudectModelItem>,
     private val onProductListener: OnProductListener
@@ -54,7 +53,8 @@ class ProductAdapter
             favCheck.setOnCheckedChangeListener(this)
         }
         override fun onClick(p0: View?) {
-            TODO("Not yet implemented")
+            // todo change product data
+            onProductListener.showDetails(GetProudects(MessageModel(0,""),null))
         }
 
         override fun onCheckedChanged(buttonView: CompoundButton?, isChecked: Boolean) {
@@ -95,6 +95,8 @@ val spinner =  holder.binding.quantityTypeSpinner
         // Set up adapter for the spinner
         val adapter = ArrayAdapter(context, R.layout.simple_spinner_dropdown_item, options)
         holder.binding.quantityTypeSpinner.adapter = adapter
+        // todo change typeface(font) of the spinner item
+        // todo change font size of the item
 
         // Pre-select "Option 2"
         spinner.setSelection(1)
@@ -102,6 +104,8 @@ val spinner =  holder.binding.quantityTypeSpinner
         // Set an item selected listener if you need to respond to item selections
         spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
+
+
                 // Handle item selection
                 val selectedOption = options[position]
                 // Use 'selectedOption' as needed

@@ -5,21 +5,21 @@
         <item
             android:id="@+id/home"
             android:icon="@drawable/home"
-            android:title="Main"/>
+            android:title="@string/main"/>
         <item
             android:id="@+id/search"
             android:icon="@drawable/search"
-            android:title="Search"/>
+            android:title="@string/search1"/>
         <item
             android:id="@+id/placeHolder"
             android:title=""/>
         <item
             android:id="@+id/favorite"
             android:icon="@drawable/love"
-            android:title="Favorite"/>
+            android:title="@string/favorite"/>
         <item
             android:id="@+id/notifications"
             android:icon="@drawable/notifications"
-            android:title="Notifications"/>
+            android:title="@string/notifications"/>
     </group>
 </menu>

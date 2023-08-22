@@ -31,7 +31,7 @@
             android:id="@+id/signInLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Create New Account"
+            android:text="@string/create_new_account"
             android:textColor="@color/white"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/included_tap"
@@ -60,7 +60,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Personal Information"
+                    android:text="@string/personal_information"
                     android:textColor="@color/blue_500"
                     android:textSize="19sp"
                     android:fontFamily="@font/arabicsemibold"
@@ -70,7 +70,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Owner of the Establishment Name"
+                    android:text="@string/owner_of_the_establishment_name"
                     android:textColor="@color/blue_500"
                     android:textSize="17sp"
                     android:fontFamily="@font/arabicsemibold"
@@ -106,7 +106,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Establishment Name"
+                    android:text="@string/establishment_name"
                     android:textColor="@color/blue_500"
                     android:textSize="17sp"
                     android:fontFamily="@font/arabicsemibold"
@@ -141,7 +141,7 @@
                 </androidx.constraintlayout.widget.ConstraintLayout><TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Email"
+                    android:text="@string/email"
                     android:textColor="@color/blue_500"
                     android:textSize="17sp"
                     android:fontFamily="@font/arabicsemibold"
@@ -180,7 +180,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     app:cornerRadius="25dp"
-                    android:text="Next"
+                    android:text="@string/send"
                     android:textSize="16sp"
                     android:fontFamily="@font/arabicsemibold"
                     android:textAllCaps="false"

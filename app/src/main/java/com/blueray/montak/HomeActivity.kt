@@ -3,7 +3,9 @@ package com.blueray.montak
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Gravity
 import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.core.view.GravityCompat
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
@@ -112,5 +114,15 @@ class HomeActivity : AppCompatActivity() {
                 }
             }
         }
+    }
+    fun openDrawer(){
+        binding.drawerLayout.openDrawer(GravityCompat.START)
+    }
+
+    override fun onBackPressed() {
+        if (binding.drawerLayout.isDrawerOpen(GravityCompat.START))
+            binding.drawerLayout.closeDrawer(GravityCompat.START)
+        else
+            super.onBackPressed()
     }
 }

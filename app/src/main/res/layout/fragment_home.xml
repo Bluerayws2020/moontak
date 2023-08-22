@@ -64,7 +64,7 @@
             android:layout_marginStart="24dp"
             android:layout_marginTop="4dp"
             android:fontFamily="@font/arabicregular"
-            android:text="Categories"
+            android:text="@string/categories"
             android:textColor="@color/blue_500"
             android:textSize="20dp"
             android:textStyle="bold"

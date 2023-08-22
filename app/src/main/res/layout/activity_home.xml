@@ -20,6 +20,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:menu="@menu/buttom_nav_menu"
             app:itemPaddingBottom="20dp"
+            app:itemPaddingTop="15dp"
             >
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_marginTop="10dp"
@@ -66,7 +67,7 @@
             android:id="@+id/fragmentContainerView"
             android:name="androidx.navigation.fragment.NavHostFragment"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="0dp"
             app:defaultNavHost="true"
             app:layout_constraintBottom_toTopOf="@id/bottomNavBar"
             app:layout_constraintEnd_toEndOf="parent"

@@ -39,6 +39,7 @@
                 android:textSize="12sp"
                 android:layout_gravity="center"
                 android:layout_weight="10"
+                android:textAlignment="center"
                 />
         </LinearLayout>
 

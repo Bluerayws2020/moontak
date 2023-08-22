@@ -41,7 +41,7 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:hint="search"
+                android:hint="@string/search"
                 android:padding="20sp"
                 android:background="@drawable/empty_edit_text"
                 />

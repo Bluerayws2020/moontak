@@ -12,6 +12,7 @@
         android:layout_gravity="center"
         />
     <ImageView
+        android:id="@+id/menuButton"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:src="@drawable/menu"
@@ -19,6 +20,7 @@
         android:layout_marginStart="20dp"
         />
     <ImageView
+        android:id="@+id/cartLabel"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:src="@drawable/cart"

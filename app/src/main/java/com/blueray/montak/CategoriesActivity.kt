@@ -10,9 +10,12 @@ import android.widget.TextView
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
+import com.blueray.montak.databinding.ActivityCartBinding
 import com.blueray.montak.databinding.ActivityProductBinding
 import com.blueray.montak.databinding.FragmentCategoriesBinding
+import com.blueray.montak.databinding.SelectedCatViewBinding
 import com.blueray.montak.helper.ViewUtils.hide
 import com.blueray.montak.model.CategoriesItems
 import com.blueray.montak.model.NetworkResults
@@ -43,7 +46,9 @@ companion object{
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         cateId = intent.extras?.getInt(CATE_ID)
-Log.d("cateIdcateId",cateId.toString())
+        Log.d("cateIdcateId",cateId.toString())
+
+
         productVM.getProductsCate().observe(this) { result ->
             when (result) {
                 is NetworkResults.Success -> {
@@ -92,51 +97,26 @@ Log.d("cateIdcateId",cateId.toString())
             binding.tabLayout,
             binding.viewPager
         ) { tab: TabLayout.Tab, position: Int ->
-            tab.text = tabListTitle[position]
+            // set custom layout for all the tab layout and st the text
+            val customLayoutBinding = SelectedCatViewBinding.inflate(layoutInflater)
+            tab.customView = customLayoutBinding.root
+            (tab.customView as CardView).findViewById<TextView>(R.id.title).text = tabListTitle[position]
+
         }.attach()
 
-
-//        val marginValue = resources.getDimensionPixelSize(R.dimen.tab_margin) // This will fetch 8dp margin
-
-        for (i in 0 until binding.tabLayout.tabCount) {
-            val tab = binding.tabLayout.getTabAt(i)
-
-//            val layoutParams = (tab?.view?.layoutParams as LinearLayout.LayoutParams).apply {
-//                if (i != 0) { // don't add start margin for the first item
-//                    marginStart = marginValue
-//                }
-//                if (i != binding.tabLayout.tabCount - 1) { // don't add end margin for the last item
-//                    marginEnd = marginValue
-//                }
-//            }
-
-//            tab?.view?.layoutParams = layoutParams
-
-            if (i == binding.tabLayout.selectedTabPosition) {
-                tab?.view?.setBackgroundResource(R.drawable.tab_selected_background)
-            } else {
-                tab?.view?.setBackgroundResource(R.drawable.unselected)
-            }
-        }
-
-        for (i in 0 until binding.tabLayout.tabCount) {
-            val tab = binding.tabLayout.getTabAt(i)
-            if (i == binding.tabLayout.selectedTabPosition) {
-                tab?.view?.setBackgroundResource(R.drawable.tab_selected_background)
-            } else {
-                tab?.view?.setBackgroundResource(R.drawable.unselected)
-            }
-        }
-
+        // at the first the selected tab dose not invoke the on tab selected function so this is the need for this code
+        selectItem()
 
         binding.tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabSelected(tab: TabLayout.Tab) {
-                tab.view.setBackgroundResource(R.drawable.tab_selected_background)
+                (tab.customView as CardView).background.setTint(ContextCompat.getColor(this@CategoriesActivity,R.color.blue_500))
+                (tab.customView as CardView).findViewById<TextView>(R.id.title).setTextColor(ContextCompat.getColor(this@CategoriesActivity,R.color.white))
 
             }
 
             override fun onTabUnselected(tab: TabLayout.Tab) {
-                tab.view.setBackgroundResource(R.drawable.unselected)
+                (tab.customView as CardView).background.setTint(ContextCompat.getColor(this@CategoriesActivity,R.color.tab_grey))
+                (tab.customView as CardView).findViewById<TextView>(R.id.title).setTextColor(ContextCompat.getColor(this@CategoriesActivity,R.color.textGrey47))
 
             }
 
@@ -150,6 +130,24 @@ Log.d("cateIdcateId",cateId.toString())
 
         binding.viewPager.setCurrentItem(pos, false)
     }
+
+    private fun selectItem() {
+//        get Selected Tap
+        val tab = binding.tabLayout.getTabAt(binding.tabLayout.selectedTabPosition)
+        (tab?.customView as CardView).background.setTint(
+            ContextCompat.getColor(
+                this,
+                R.color.blue_500
+            )
+        )
+        (tab.customView as CardView).findViewById<TextView>(R.id.title)
+            .setTextColor(ContextCompat.getColor(this, R.color.white))
+    }
+
+    // fixme  add margins to tab layout // done
+    // todo add localization to the app
+    // todo product counter implementation
+    // todo implement product inner
 
 
 }

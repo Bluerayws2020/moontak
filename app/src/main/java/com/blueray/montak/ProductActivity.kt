@@ -2,6 +2,8 @@ package com.blueray.montak
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import androidx.startup.StartupLogger.e
 import com.blueray.montak.adapters.ProductPagerAdapter
 import com.blueray.montak.databinding.ActivityProductBinding
 import com.google.android.material.tabs.TabLayout
@@ -18,6 +20,8 @@ class ProductActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         setUpViewPagerWithTapLayout()
+
+        Log.e("ayham","this is product activity")
 
     }
 

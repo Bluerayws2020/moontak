@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.blueray.montak.CategoriesActivity
 import com.blueray.montak.CategoriesActivity.Companion.CATE_ID
+import com.blueray.montak.HomeActivity
 import com.blueray.montak.R
 import com.blueray.montak.adapters.HomeCategoryAdapter
 import com.blueray.montak.adapters.HomeDealsAdapter
@@ -39,8 +40,12 @@ class HomeFragment : Fragment() {
     ): View {
         binding = FragmentHomeBinding.inflate(layoutInflater)
         dealsAdapter = HomeDealsAdapter(listOf())
-
         homeSliderAdapter =  HomeSliderAdapter(requireContext(),listOf())
+
+        // nav drawer open and close
+        binding.includedTap.menuButton.setOnClickListener {
+            (requireActivity() as HomeActivity).openDrawer()
+        }
 
         return binding.root
     }
@@ -73,7 +78,7 @@ class HomeFragment : Fragment() {
     }
 
 
-fun getCategorys(){
+private fun getCategorys(){
     viewmodel.getCats().observe(viewLifecycleOwner) { result ->
         binding.progressBarCate.hide()
 //        binding.swipeToRefresh.isRefreshing = false

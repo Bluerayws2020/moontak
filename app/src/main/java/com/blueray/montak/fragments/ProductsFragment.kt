@@ -6,12 +6,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.blueray.montak.R
 import com.blueray.montak.adapters.ProductAdapter
+import com.blueray.montak.databinding.FragmentProductInfoBottomSheetBinding
 import com.blueray.montak.databinding.FragmentProductsBinding
 import com.blueray.montak.databinding.FragmentsearchBinding
+import com.blueray.montak.databinding.ProductDeatailsBottomSheetBinding
 import com.blueray.montak.helper.ViewUtils.hide
 import com.blueray.montak.helper.ViewUtils.show
 import com.blueray.montak.interfaces.OnProductListener
@@ -19,6 +22,7 @@ import com.blueray.montak.model.GetProudects
 import com.blueray.montak.model.NetworkResults
 import com.blueray.montak.model.ProudectModelItem
 import com.blueray.montak.viewModel.appViewModel
+import com.google.android.material.bottomsheet.BottomSheetDialog
 
 
 class ProductsFragment : Fragment() {
@@ -46,7 +50,7 @@ class ProductsFragment : Fragment() {
 
 
                 override fun addToCart(price: Double?, pid: Int?, quantity: String) {
-                    TODO("Not yet implemented")
+                    // todo not implemented yet
                 }
 
                 override fun addToFavourite(pid: Int) {
@@ -56,11 +60,11 @@ class ProductsFragment : Fragment() {
                 }
 
                 override fun removeFromFavourite(favId: Int) {
-                    TODO("Not yet implemented")
+//                    TODO("Not yet implemented")
                 }
 
                 override fun showDetails(product: GetProudects) {
-                    TODO("Not yet implemented")
+                    showBottomSheet()
                 }
 
 
@@ -69,6 +73,24 @@ class ProductsFragment : Fragment() {
             })
         }
     }
+
+    private fun showBottomSheet() {
+        // initialize Bottom sheet Object
+        val dialog  = BottomSheetDialog(requireActivity())
+
+        // initialize binding for bottom sheet
+        val botBinding = ProductDeatailsBottomSheetBinding.inflate(layoutInflater)
+
+        // Set rounded corner drawable as background
+        botBinding.root.background = ContextCompat.getDrawable(requireContext(), R.drawable.buttom_sheet_back)
+
+        // address viewBinding to the bottomSheet dialog
+        dialog.setContentView(botBinding.root)
+
+        dialog.show()
+
+    }
+
     fun getRequestFav(){
         viewmodel.getAddToFavouriteMessage().observe(viewLifecycleOwner) { result ->
             when (result) {
