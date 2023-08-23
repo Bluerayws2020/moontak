@@ -32,6 +32,7 @@ class ProductsFragment : Fragment() {
     private val viewmodel by viewModels<appViewModel>()
     private lateinit var  dialog  : BottomSheetDialog
 
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
