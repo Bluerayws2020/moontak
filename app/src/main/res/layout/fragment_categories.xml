@@ -20,7 +20,7 @@
             android:id="@+id/rvLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Food"
+            android:text="@string/food"
             android:textSize="14sp"
             android:textColor="@color/blue_500"
             android:fontFamily="@font/arabicsemibold"

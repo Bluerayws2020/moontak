@@ -36,7 +36,12 @@ const val PHONENUMEBR = "PHONE"
 
     fun getLang(mContext: Context?): String {
         val sharedPreferences = mContext?.getSharedPreferences(SHARED_PREF, Context.MODE_PRIVATE)
-        return sharedPreferences?.getString("lang", "ar")!!
+        return sharedPreferences?.getString("lang", "en")!!
+    }
+    fun setLang(mContext: Context?,lang: String?){
+        val sharedPreferences = mContext?.getSharedPreferences(SHARED_PREF, Context.MODE_PRIVATE)
+        val editor = sharedPreferences?.edit()
+        editor?.putString("lang",lang)
     }
 
     fun getUID(mContext: Context?): String {

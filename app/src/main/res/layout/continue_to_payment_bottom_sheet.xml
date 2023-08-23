@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:cardCornerRadius="25dp"
+    app:cardElevation="20dp"
+    app:cardBackgroundColor="@color/buttom_card_back"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:orientation="vertical"
+        android:layout_marginStart="35dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginTop="20dp"
+        >
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/itemsRv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:listitem="@layout/payment_rec_item"
+            tools:itemCount="5"
+            />
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="@string/update_cart"
+            android:textAllCaps="false"
+            app:cornerRadius="25dp"
+            android:layout_marginTop="15dp"
+            />
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="@string/cash_on_delivery"
+            android:textAllCaps="false"
+            app:cornerRadius="25dp"
+            android:layout_marginTop="5dp"
+
+            />
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="@string/pay_online"
+            android:textAllCaps="false"
+            app:cornerRadius="25dp"
+            android:layout_marginTop="5dp"
+
+            />
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

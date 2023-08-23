@@ -23,7 +23,7 @@
         tools:layout="@layout/fragment_profile" />
     <fragment
         android:id="@+id/notficationFragment"
-        android:name="com.blueray.montak.fragments.NotficationFragment"
+        android:name="com.blueray.montak.fragments.NotificationFragment"
         android:label="NotficationFragment" />
     <fragment
         android:id="@+id/searchFragment"
