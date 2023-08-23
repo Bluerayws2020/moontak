@@ -10,6 +10,8 @@ import android.widget.ArrayAdapter
 import android.widget.CompoundButton
 import androidx.recyclerview.widget.RecyclerView
 import com.blueray.montak.databinding.ProductsItemBinding
+import com.blueray.montak.helper.ViewUtils.hide
+import com.blueray.montak.helper.ViewUtils.show
 import com.blueray.montak.interfaces.OnProductListener
 import com.blueray.montak.model.GetProudects
 import com.blueray.montak.model.MessageModel
@@ -119,6 +121,8 @@ val spinner =  holder.binding.quantityTypeSpinner
 
 
 
+
+
         holder.binding.likeBtn.setOnClickListener {
             onProductListener.addToFavourite(list[position].pid.toInt())
         }
@@ -126,8 +130,36 @@ val spinner =  holder.binding.quantityTypeSpinner
 
         holder.favCheck.isChecked = productItem.fav != 0
 
+        holder.binding.addToCart.setOnClickListener {
+
+            holder.binding.addToCart.hide()
+            holder.binding.itemCountLayout.show()
 
         }
+
+        holder.binding.addItem.setOnClickListener {
+            var count =  holder.binding.itemCount.text.toString().toInt()
+            count += 1
+            holder.binding.itemCount.text = count.toString()
+            // todo call api to update the items count
+        }
+
+        holder.binding.removeItem.setOnClickListener {
+            var count =  holder.binding.itemCount.text.toString().toInt()
+            count -= 1
+            if(count == 0){
+                holder.binding.addToCart.show()
+                holder.binding.itemCountLayout.hide()
+            }else{
+                holder.binding.itemCount.text = count.toString()
+            }
+            // todo call api to update items count
+        }
+
+
+        }
+
+
 
 
 

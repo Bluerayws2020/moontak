@@ -106,4 +106,5 @@
     <string name="add_item">add item</string>
     <string name="add_to_cart">add to cart</string>
     <string name="description">description</string>
+    <string name="cart">Cart</string>
 </resources>

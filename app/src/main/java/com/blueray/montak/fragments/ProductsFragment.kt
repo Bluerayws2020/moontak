@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.blueray.montak.R
 import com.blueray.montak.adapters.ProductAdapter
@@ -29,6 +30,7 @@ class ProductsFragment : Fragment() {
 
     private lateinit var binding : FragmentProductsBinding
     private val viewmodel by viewModels<appViewModel>()
+    private lateinit var  dialog  : BottomSheetDialog
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -41,6 +43,8 @@ class ProductsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+//      initialize Bottom sheet Object
+        dialog  = BottomSheetDialog(requireActivity())
         val productList = arguments?.getParcelableArrayList<ProudectModelItem>("products")
         binding.productRv.layoutManager = LinearLayoutManager(requireContext(),LinearLayoutManager.VERTICAL,false)
 
@@ -75,20 +79,48 @@ class ProductsFragment : Fragment() {
     }
 
     private fun showBottomSheet() {
-        // initialize Bottom sheet Object
-        val dialog  = BottomSheetDialog(requireActivity())
 
-        // initialize binding for bottom sheet
-        val botBinding = ProductDeatailsBottomSheetBinding.inflate(layoutInflater)
 
-        // Set rounded corner drawable as background
-        botBinding.root.background = ContextCompat.getDrawable(requireContext(), R.drawable.buttom_sheet_back)
+        if(!dialog.isShowing ){
 
-        // address viewBinding to the bottomSheet dialog
-        dialog.setContentView(botBinding.root)
+            // initialize binding for bottom sheet
+            val botBinding = ProductDeatailsBottomSheetBinding.inflate(layoutInflater)
 
-        dialog.show()
+            // Set rounded corner drawable as background
+            botBinding.root.background = ContextCompat.getDrawable(requireContext(), R.drawable.buttom_sheet_back)
 
+            // address viewBinding to the bottomSheet dialog
+            dialog.setContentView(botBinding.root)
+
+            dialog.show()
+
+            // bind data
+            botBinding.addToCartBtn.setOnClickListener {
+                // todo implement add to cart api
+            }
+
+
+            // plus btn imp
+            botBinding.plus.setOnClickListener {
+    //            add one item to the cart
+                var count = botBinding.counter.text.toString().toInt()
+                count +=1
+                botBinding.counter.text = count.toString()
+            }
+
+
+    //        minus imp
+            botBinding.minus.setOnClickListener {
+    //            if count = 0 then do not decrement
+                var count = botBinding.counter.text.toString().toInt()
+                if(count != 0){
+                    count -=1
+                    botBinding.counter.text = count.toString()
+                }
+
+            }
+
+    }
     }
 
     fun getRequestFav(){

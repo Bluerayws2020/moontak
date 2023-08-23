@@ -62,7 +62,7 @@
             app:layout_constraintBottom_toBottomOf="@+id/quantityTypeSpinner"
             app:layout_constraintEnd_toEndOf="@+id/quantityTypeSpinner"
             app:layout_constraintTop_toTopOf="@+id/quantityTypeSpinner"
-            app:layout_constraintVertical_bias="0.5" />
+            />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/addToCart"
@@ -79,6 +79,52 @@
             app:layout_constraintEnd_toEndOf="@+id/quantityTypeSpinner"
             app:layout_constraintStart_toEndOf="@+id/productImage"
             app:layout_constraintTop_toBottomOf="@+id/quantityTypeSpinner" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/productImage"
+            app:layout_constraintStart_toEndOf="@+id/productImage"
+            app:layout_constraintTop_toBottomOf="@+id/quantityTypeSpinner"
+            android:weightSum="90"
+            android:orientation="horizontal"
+            android:id="@+id/itemCountLayout"
+            android:visibility="gone"
+            >
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="30dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/otp_back_background"
+                android:src="@drawable/add_plus"
+                android:id="@+id/addItem"
+
+                />
+            <TextView
+                android:id="@+id/itemCount"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:text="1"
+                android:textColor="@color/black_200"
+                android:textSize="13sp"
+                android:fontFamily="@font/arabicregular"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                />
+            <ImageView
+                android:id="@+id/removeItem"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/minus"
+                android:paddingTop="14sp"
+                android:paddingBottom="14dp"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:background="@drawable/otp_back_background"
+                android:alpha="0.5"
+                />
+        </LinearLayout>
 
         <androidx.appcompat.widget.AppCompatCheckBox
             android:id="@+id/likeBtn"

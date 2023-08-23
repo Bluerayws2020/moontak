@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import com.blueray.montak.R
 
 
-class NotficationFragment : Fragment() {
+class NotificationFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
