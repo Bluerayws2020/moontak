@@ -12,6 +12,7 @@ import androidx.activity.viewModels
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.blueray.montak.CartActivity
 import com.blueray.montak.CategoriesActivity
 import com.blueray.montak.CategoriesActivity.Companion.CATE_ID
 import com.blueray.montak.HomeActivity
@@ -45,6 +46,12 @@ class HomeFragment : Fragment() {
         // nav drawer open and close
         binding.includedTap.menuButton.setOnClickListener {
             (requireActivity() as HomeActivity).openDrawer()
+        }
+        // navigate to cart
+        binding.includedTap.cartLabel.setOnClickListener {
+            startActivity(Intent(activity,CartActivity::class.java).apply {
+                // todo add extras
+            })
         }
 
         return binding.root

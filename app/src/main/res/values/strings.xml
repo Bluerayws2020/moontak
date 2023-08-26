@@ -107,4 +107,19 @@
     <string name="add_to_cart">add to cart</string>
     <string name="description">description</string>
     <string name="cart">Cart</string>
+    <string name="food">Food</string>
+    <string name="establishment_name_1">Establishment name:</string>
+    <string name="lurime">Lurime</string>
+    <string name="personal_data">personal data</string>
+    <string name="save">Save</string>
+    <string name="continue_to_pay">Continue to Pay</string>
+    <string name="update_cart">Update Cart</string>
+    <string name="final_total">Final Total</string>
+    <string name="add_new_location">Add New Location</string>
+    <string name="cash_on_delivery">Cash on Delivery</string>
+    <string name="pay_online">Pay Online</string>
+    <string name="search_in_food">Search in Food</string>
+    <string name="my_profile">My Profile</string>
+    <string name="save_my_location">Save My Location</string>
+    <string name="update">Update</string>
 </resources>

@@ -33,4 +33,8 @@
         parent="Widget.Design.BottomSheet.Modal">
         <item name="android:background">@drawable/buttom_sheet_back</item>
     </style>
+        <style name="NavigationDrawerTextAppearance2" parent="@android:style/TextAppearance">
+        <item name="android:textSize">12sp</item>
+        <item name="android:fontFamily">@font/arabicregular</item>
+    </style>
 </resources>

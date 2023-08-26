@@ -11,6 +11,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.blueray.montak.HomeActivity
 import com.blueray.montak.R
 import com.blueray.montak.adapters.ProductAdapter
 import com.blueray.montak.databinding.FragmentsearchBinding
@@ -36,15 +37,27 @@ class SearchFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = FragmentsearchBinding.inflate(layoutInflater)
 
+       // action bar setUp
+        setUpActionBar()
+
 
 
         getProudectData()
-binding.searchsss.setOnClickListener{
+    binding.searchsss.setOnClickListener{
     searchProducts(binding.search.text.toString())
 
 }
         return binding.root
 
+    }
+
+    // setting up action bar
+    private fun setUpActionBar() {
+        binding.includedTap.back.hide()
+        binding.includedTap.title.text =getString(R.string.search)
+        binding.includedTap.menu.setOnClickListener {
+            (activity as HomeActivity).openDrawer()
+        }
     }
 
 

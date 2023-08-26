@@ -1,11 +1,29 @@
 package com.blueray.montak
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.blueray.montak.databinding.ActivityChangeNumberBinding
+import com.blueray.montak.helper.ViewUtils.hide
 
-class ChangeNumberActivity : AppCompatActivity() {
+class ChangeNumberActivity : BaseActivity() {
+
+    private lateinit var binding : ActivityChangeNumberBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_change_number)
+        binding = ActivityChangeNumberBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        // set up app bar
+        setUpActionBar()
+
+    }
+
+    // setting up action bar
+    private fun setUpActionBar() {
+        binding.includedTap.back.setOnClickListener {
+            onBackPressedDispatcher.onBackPressed()
+        }
+        binding.includedTap.title.text = getString(R.string.add_new_location)
+        binding.includedTap.menu.hide()
     }
 }

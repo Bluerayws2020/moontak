@@ -6,7 +6,7 @@ import com.blueray.montak.databinding.ActivityClockTestBinding
 import ir.samanjafari.easycountdowntimer.CountDownInterface
 import java.util.Locale
 
-class ClockTest : AppCompatActivity() {
+class ClockTest : BaseActivity() {
 
     private lateinit var binding : ActivityClockTestBinding
 

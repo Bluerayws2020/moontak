@@ -6,24 +6,31 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import androidx.lifecycle.lifecycleScope
 import com.blueray.montak.databinding.ActivityOnBoardingBinding
 import com.example.aljabermall.helpers.HelperUtils
+import com.example.aljabermall.helpers.HelperUtils.setLang
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 @SuppressLint("CustomSplashScreen")
-class SplashScreen : AppCompatActivity() {
+class SplashScreen : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash_screen)
+        // change lang
+        changeLanguage("ar")
 
-
-        Handler(Looper.getMainLooper()).postDelayed({
-            if (HelperUtils.getUID(this) != "0") {
+        lifecycleScope.launch {
+           delay(2000)
+            if (HelperUtils.getUID(this@SplashScreen) != "0") {
                 openUser()
 
             } else
-            openHome()
+                openHome()
 
-        }, 2000)
+        }
+
 
     }
     private fun openHome() {
@@ -36,5 +43,9 @@ class SplashScreen : AppCompatActivity() {
         val intentHome = Intent(this, HomeActivity::class.java)
         startActivity(intentHome)
         finish()
+    }
+    private fun changeLanguage(lang:String){
+        HelperUtils.setDefaultLanguage(this@SplashScreen, lang)
+        setLang(this@SplashScreen,lang)
     }
 }

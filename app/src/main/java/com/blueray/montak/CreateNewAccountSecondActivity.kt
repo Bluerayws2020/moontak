@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.blueray.montak.databinding.ActivityCreateNewAccountSecondBinding
 
-class CreateNewAccountSecondActivity : AppCompatActivity() {
+class CreateNewAccountSecondActivity : BaseActivity() {
 
     private lateinit var binding : ActivityCreateNewAccountSecondBinding
 

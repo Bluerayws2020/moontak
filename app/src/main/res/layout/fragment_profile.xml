@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".fragments.ProfileFragment">
+    tools:context=".ProfileFragment">
 
    <androidx.constraintlayout.widget.ConstraintLayout
        android:layout_width="match_parent"
@@ -12,7 +12,7 @@
 
        <include
            android:id="@+id/included_tap"
-           layout="@layout/home_inner_app_bar"
+           layout="@layout/fav_app_bar"
            app:layout_constraintEnd_toEndOf="parent"
            app:layout_constraintHorizontal_bias="0.0"
            app:layout_constraintStart_toStartOf="parent"
@@ -83,7 +83,7 @@
                    android:id="@+id/establishmentNameLabel"
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
-                   android:text="Establishment name: "
+                   android:text="@string/establishment_name_1"
                    app:layout_constraintStart_toStartOf="@id/placeHolder"
                    app:layout_constraintBottom_toTopOf="@id/centerSaver"
                    android:layout_marginStart="15dp"
@@ -95,7 +95,7 @@
                    android:id="@+id/establishmentNameTv"
                    android:layout_width="0dp"
                    android:layout_height="wrap_content"
-                   android:text="Lurime"
+                   android:text="@string/lurime"
                    android:textSize="9sp"
                    app:layout_constraintEnd_toEndOf="parent"
                    app:layout_constraintStart_toEndOf="@+id/establishmentNameLabel"
@@ -159,7 +159,7 @@
                android:layout_height="wrap_content"
                android:layout_gravity="start|center_vertical"
                android:layout_marginStart="90dp"
-               android:text="personal data"
+               android:text="@string/personal_data"
                android:textColor="@color/textGrey47"
                android:fontFamily="@font/arabicsemibold"
                />
@@ -204,7 +204,7 @@
                android:layout_height="wrap_content"
                android:layout_gravity="start|center_vertical"
                android:layout_marginStart="90dp"
-               android:text="Sector"
+               android:text="@string/sector"
                android:textColor="@color/textGrey47"
                android:fontFamily="@font/arabicsemibold"
                />
@@ -251,7 +251,7 @@
                android:layout_height="wrap_content"
                android:layout_gravity="start|center_vertical"
                android:layout_marginStart="90dp"
-               android:text="Address"
+               android:text="@string/address"
                android:textColor="@color/textGrey47"
                android:fontFamily="@font/arabicsemibold"
                />

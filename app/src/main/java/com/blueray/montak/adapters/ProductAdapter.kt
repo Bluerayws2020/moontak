@@ -87,8 +87,8 @@ class ProductAdapter
         val productItem = list[position]
 
 
-            holder.binding.productName .text = productItem.title
-        holder.binding.price .text = productItem.price.toString()
+            holder.binding.productName.text = productItem.title
+        holder.binding.price.text = productItem.price.toString()
 
 
          val options = arrayOf("Carton", "Peice")
@@ -171,6 +171,7 @@ val spinner =  holder.binding.quantityTypeSpinner
 //            crossfade(true)
 
 
+    // todo app bar 3 app bar
 
 
 }

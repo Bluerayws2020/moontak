@@ -21,6 +21,8 @@
             app:menu="@menu/buttom_nav_menu"
             app:itemPaddingBottom="20dp"
             app:itemPaddingTop="15dp"
+            app:itemTextAppearance="@style/NavigationDrawerTextAppearance2"
+            app:itemTextAppearanceActive="@style/NavigationDrawerTextAppearance2"
             >
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_marginTop="10dp"
@@ -85,5 +87,6 @@
         app:menu="@menu/side_menu"
         app:headerLayout="@layout/drawer_header"
         android:layout_gravity="start"
+        app:itemTextAppearance="@style/NavigationDrawerTextAppearance2"
         />
 </androidx.drawerlayout.widget.DrawerLayout>

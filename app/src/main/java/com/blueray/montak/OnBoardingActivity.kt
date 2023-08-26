@@ -9,7 +9,7 @@ import com.blueray.montak.databinding.ActivityOnBoardingBinding
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
-class OnBoardingActivity : AppCompatActivity() {
+class OnBoardingActivity : BaseActivity() {
 
     private lateinit var binding : ActivityOnBoardingBinding
 

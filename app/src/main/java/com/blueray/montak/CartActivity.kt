@@ -1,13 +1,13 @@
 package com.blueray.montak
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
-import android.view.LayoutInflater
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.blueray.montak.adapters.CartAdapter
 import com.blueray.montak.databinding.ActivityCartBinding
+import com.blueray.montak.helper.ViewUtils.hide
 
-class CartActivity : AppCompatActivity() {
+class CartActivity : BaseActivity() {
     private lateinit var binding : ActivityCartBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,11 +18,30 @@ class CartActivity : AppCompatActivity() {
         // setUp recyclers
         setUpCartRec()
 
+        // setup ActionBar
+        setUpActionBar()
+
+        // continue to payment
+        binding.continueToPayBtn.setOnClickListener {
+            startActivity(Intent(this,ContinueToPayment::class.java).apply {
+                //todo add extra
+            })
+        }
+
     }
 
     // cart recycler setUp
     private fun setUpCartRec() {
         binding.cartRv.layoutManager = LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false)
         binding.cartRv.adapter = CartAdapter(listOf())
+    }
+
+    // setting up action bar
+    private fun setUpActionBar() {
+        binding.includedTap.back.setOnClickListener {
+            onBackPressedDispatcher.onBackPressed()
+        }
+        binding.includedTap.title.text = getString(R.string.cart)
+        binding.includedTap.menu.hide()
     }
 }

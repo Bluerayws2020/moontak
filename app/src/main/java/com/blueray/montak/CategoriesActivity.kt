@@ -27,7 +27,7 @@ import com.google.android.material.tabs.TabLayoutMediator
 import java.util.ArrayList
 import java.util.Locale
 
-class CategoriesActivity : AppCompatActivity() {
+class CategoriesActivity : BaseActivity() {
 companion object{
     val CATE_ID = "CATE_ID"
 }
@@ -42,8 +42,7 @@ companion object{
         setContentView(binding.root)
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
 
-        supportActionBar?.title = getString(R.string.categories)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        setUpActionBar()
 
         cateId = intent.extras?.getInt(CATE_ID)
         Log.d("cateIdcateId",cateId.toString())
@@ -144,10 +143,14 @@ companion object{
             .setTextColor(ContextCompat.getColor(this, R.color.white))
     }
 
-    // fixme  add margins to tab layout // done
-    // todo add localization to the app
-    // todo product counter implementation
-    // todo implement product inner
+// setting up action bar
+    private fun setUpActionBar() {
+        binding.includedTap.back.setOnClickListener {
+            onBackPressedDispatcher.onBackPressed()
+        }
+        binding.includedTap.title.text = getString(R.string.categories)
+        binding.includedTap.menu.hide()
+    }
 
 
 }

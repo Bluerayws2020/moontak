@@ -3,16 +3,13 @@ package com.blueray.montak
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.Gravity
-import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.core.view.GravityCompat
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
 import com.blueray.montak.databinding.ActivityHomeBinding
-import com.blueray.montak.fragments.ProfileFragment
 
-class HomeActivity : AppCompatActivity() {
+class HomeActivity : BaseActivity() {
 
     private lateinit var binding :ActivityHomeBinding
     private lateinit var navController: NavController
@@ -75,20 +72,28 @@ class HomeActivity : AppCompatActivity() {
             when(menuItem.itemId){
                 R.id.home->{
                     navController.navigate(R.id.home)
+                    closeDrawer()
                     true
                 }
                 R.id.search->{
-                    startActivity(Intent(this@HomeActivity,ProductActivity::class.java))
+                    navController.navigate(R.id.searchFragment)
+                    closeDrawer()
                     true
                 }
                 R.id.favorite->{
+                    navController.navigate(R.id.favFragment)
+                    closeDrawer()
                     true
                 }
                 R.id.notifications->{
+                    navController.navigate(R.id.notficationFragment)
+                    closeDrawer()
                     true
                 }
                 R.id.profile ->{
-                    navController.navigate(R.id.profile)
+                    startActivity(Intent(this,ProfileFragment::class.java).apply {
+                        // todo add extras
+                    })
                     true
                 }
                 R.id.aboutUs ->{
@@ -117,6 +122,9 @@ class HomeActivity : AppCompatActivity() {
     }
     fun openDrawer(){
         binding.drawerLayout.openDrawer(GravityCompat.START)
+    }
+    fun closeDrawer(){
+        binding.drawerLayout.closeDrawer(GravityCompat.START)
     }
 
     override fun onBackPressed() {

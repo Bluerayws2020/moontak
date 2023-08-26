@@ -23,7 +23,7 @@ import com.blueray.montak.viewModel.appViewModel
 import com.example.aljabermall.helpers.HelperUtils
 import retrofit2.HttpException
 
-class CreateNewAccountThirdActivity : AppCompatActivity() {
+class CreateNewAccountThirdActivity : BaseActivity() {
     private val viewmodel by viewModels<appViewModel>()
     private lateinit var binding: ActivityCreateNewAccountThirdBinding
     private var sectoreList: ArrayList<MSector> = ArrayList()

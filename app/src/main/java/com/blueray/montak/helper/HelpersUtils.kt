@@ -14,6 +14,7 @@ import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import com.blueray.montak.MainActivity
 import com.blueray.montak.R
+import com.google.firebase.crashlytics.buildtools.reloc.org.apache.commons.codec.language.bm.Languages
 import java.util.*
 
 object HelperUtils {
@@ -37,6 +38,13 @@ const val PHONENUMEBR = "PHONE"
     fun getLang(mContext: Context?): String {
         val sharedPreferences = mContext?.getSharedPreferences(SHARED_PREF, Context.MODE_PRIVATE)
         return sharedPreferences?.getString("lang", "ar")!!
+    }
+
+    fun setLang(mContext: Context?,lang: String?){
+        val sharedPreferences = mContext?.getSharedPreferences(SHARED_PREF, Context.MODE_PRIVATE)
+        val editor = sharedPreferences?.edit()
+        editor?.putString("lang",lang)
+        editor.apply {  }
     }
 
     fun getUID(mContext: Context?): String {

@@ -15,7 +15,7 @@ import com.example.aljabermall.helpers.HelperUtils
 import com.example.aljabermall.helpers.HelperUtils.PHONENUMEBR
 import retrofit2.HttpException
 
-class LoginActivity : AppCompatActivity() {
+class LoginActivity : BaseActivity() {
     private val viewmodel by viewModels<appViewModel>()
     private lateinit var binding: ActivityLoginActivtiyBinding
 

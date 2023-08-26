@@ -2,8 +2,14 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="110dp"
-    android:background="#FCF8F8"
     >
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/app_bar_back"
+        android:scaleType="centerCrop"
+        />
 
     <ImageView
         android:layout_width="90sp"
@@ -11,18 +17,20 @@
         android:src="@drawable/logo_3x"
         android:layout_gravity="center"
         />
+
     <ImageView
         android:id="@+id/menuButton"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:src="@drawable/menu"
         android:layout_gravity="start|center_vertical"
         android:layout_marginStart="20dp"
         />
+
     <ImageView
         android:id="@+id/cartLabel"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:src="@drawable/cart"
         android:layout_gravity="end|center_vertical"
         android:layout_marginEnd="20dp"

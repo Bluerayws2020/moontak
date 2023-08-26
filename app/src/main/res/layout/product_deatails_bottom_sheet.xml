@@ -139,9 +139,9 @@ android:layout_height="0dp"
                     android:id="@+id/productDescription"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textAlignment="textStart"
-                    android:text="لوريم ايبسوم هو نص غير حقيقي لوريم ايبسوم هو نص غير حقيقي\nلوريم ايبسوم هو نص غير حقيقي لوريم ايبسوم هو نص غير حقيقي\n لوريم ايبسوم هو نص غير حقيقي لوريم ايبسوم هو نص غير حقيقي\n لوريم ايبسوم هو نص غير حقيقي"
                     android:textSize="12sp"
+                    android:textAlignment="textStart"
+                    android:text="@string/lorem_ipsum"
                     android:fontFamily="@font/arabicregular"
                     />
             </LinearLayout>

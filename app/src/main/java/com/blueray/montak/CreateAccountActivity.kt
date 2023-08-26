@@ -15,7 +15,7 @@ import com.blueray.montak.viewModel.appViewModel
 import com.example.aljabermall.helpers.HelperUtils
 import retrofit2.HttpException
 
-class CreateAccountActivity : AppCompatActivity() {
+class CreateAccountActivity : BaseActivity() {
     companion object{
         var phone:String = ""
         var name:String = ""

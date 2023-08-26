@@ -16,7 +16,7 @@ import com.blueray.montak.viewModel.appViewModel
 import com.example.aljabermall.helpers.HelperUtils
 import retrofit2.HttpException
 
-class OtpActivity : AppCompatActivity() {
+class OtpActivity : BaseActivity() {
     private val viewmodel by viewModels<appViewModel>()
     private lateinit var binding: ActivityOtpBinding
 var otpNum = ""

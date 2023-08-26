@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.blueray.montak.HomeActivity
 import com.blueray.montak.R
 import com.blueray.montak.adapters.HomeDealsAdapter
 import com.blueray.montak.adapters.HomeSliderAdapter
@@ -34,12 +35,23 @@ class FavFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = FragmentFavBinding.inflate(layoutInflater)
 
+        // set Up ActionBar
+        setUpActionBar()
 
         getProudectData()
         viewmodel.retriveProudectFav()
 
         return binding.root
 
+    }
+
+    // setting up action bar
+    private fun setUpActionBar() {
+        binding.includedTap.back.hide()
+        binding.includedTap.title.text =getString(R.string.favorite)
+        binding.includedTap.menu.setOnClickListener {
+            (activity as HomeActivity).openDrawer()
+        }
     }
 fun getRequestFav(){
     viewmodel.getAddToFavouriteMessage().observe(viewLifecycleOwner) { result ->
