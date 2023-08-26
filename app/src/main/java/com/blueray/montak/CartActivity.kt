@@ -26,6 +26,7 @@ class CartActivity : BaseActivity() {
             startActivity(Intent(this,ContinueToPayment::class.java).apply {
                 //todo add extra
             })
+
         }
 
     }
