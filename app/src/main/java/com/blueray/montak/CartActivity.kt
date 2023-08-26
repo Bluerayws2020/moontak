@@ -32,6 +32,7 @@ class CartActivity : BaseActivity() {
 
     // cart recycler setUp
     private fun setUpCartRec() {
+
         binding.cartRv.layoutManager = LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false)
         binding.cartRv.adapter = CartAdapter(listOf())
     }
